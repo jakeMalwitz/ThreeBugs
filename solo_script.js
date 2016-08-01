@@ -25,7 +25,7 @@ for(var i = 0; i < array.length; i++){
 
 function calculateSTI(array){
   var newArray = [];
-	//First bug, need to connect with loop and i in order to store each element into proper place
+	//BUG, need to connect with loop and i in order to store each element into proper place
   newArray[0] = array[i]; // employee name
   var employeeNumber = array[i][1];
   var baseSalary = array[i][2];
@@ -38,7 +38,7 @@ function calculateSTI(array){
   }
 
   newArray[1] = bonus; // percentage of STI employee to receive
-	//Bug, need to round up to avoid so many decimal places.
+	//BUG, need to round up to avoid so many decimal places.
   newArray[2] = Math.round((baseSalary * (1.0 + bonus))); // adjusted annual compensation
   newArray[3] = Math.round((baseSalary * bonus)); //total bonus rounded to nearest dollar
   console.log(newArray[0] + " " + newArray[1] + " " + newArray[2] + " " + newArray[3]);
@@ -63,7 +63,7 @@ function getBaseSTI(reviewScore){
     case 5:
       basePercent = 0.10;
   }
-	//Bug, no need to subtract 1.
+	//BUG, no need to subtract 1.
   return basePercent;
 }
 
@@ -75,7 +75,7 @@ function getYearAdjustment(employeeNumber){
   }
   return yearAdjustment;
 }
-//ParseInt salary to a number & math is wrong, should subract from incomeAdjustment
+//BUG, ParseInt salary to a number & math is wrong, should subract from incomeAdjustment
 function getIncomeAdjustment(salary){
   var incomeAdjustment = 0;
   salary = parseInt(salary);
